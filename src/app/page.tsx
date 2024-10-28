@@ -7,7 +7,7 @@ export default function Home() {
         <div className="grid grid-cols-12">
           <div className="col-span-6 flex flex-col justify-center">
             <p className="text-xl">Classic Exclusive</p>
-            <h2 className="text-4xl font-bold py-1">Women's Collection</h2>
+            <h2 className="text-4xl font-bold py-1">Women&apos;s Collection</h2>
             <p className="uppercase text-xl">Upto 40% off</p>
             <button className='bg-black text-white px-6 py-2 rounded-lg w-32 mt-8'>Shop Now</button>
           </div>
