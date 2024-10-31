@@ -1,4 +1,7 @@
 import Image from "next/image";
+import BestSeller from "./components/Sections/BestSeller/BestSeller";
+import TopRated from "./components/Sections/BestSeller/TopRated";
+import ButtonDark from "./components/Buttons/ButtonDark";
 
 export default function Home() {
   return (
@@ -8,8 +11,8 @@ export default function Home() {
           <div className="col-span-6 flex flex-col justify-center">
             <p className="text-xl">Classic Exclusive</p>
             <h2 className="text-4xl font-bold py-1">Women&apos;s Collection</h2>
-            <p className="uppercase text-xl">Upto 40% off</p>
-            <button className='bg-black text-white px-6 py-2 rounded-lg w-32 mt-8'>Shop Now</button>
+            <p className="uppercase text-xl mb-4">Upto 40% off</p>
+            <ButtonDark/>
           </div>
           <div className="col-span-6">
             <Image src="/images/home-banner.png" alt="home banner" width={500} height={400}/>
@@ -62,6 +65,12 @@ export default function Home() {
             </button>
           </div>
         </div>
+      </section>
+      <section className="best-seller p-20">
+        <BestSeller></BestSeller>
+      </section>
+      <section className="p-20">
+        <TopRated></TopRated>
       </section>
     </>
   );
