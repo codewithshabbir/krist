@@ -1,18 +1,17 @@
-.buttonDark {
+.buttonLight {
     position: relative;
     display: inline-block;
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     cursor: pointer;
-    border: 2px solid black;
 }
 
 .animLayer {
     position: absolute;
-    background-color: white;
+    background-color: black;
     transition: width 0.3s ease;
     height: 100%;
     top: 0;
@@ -20,15 +19,15 @@
     width: 0;
 }
 
-.buttonDark:hover .animLayer {
+.buttonLight:hover .animLayer {
     width: 100%;
     left: 0;
     right: auto;
 }
-.buttonDark:hover {
-    color: black;
+.buttonLight:hover {
+    color: white;
 }
 
-.buttonDarkAnchor {
-    @apply px-5 py-2 flex justify-center items-center relative z-10 hover:text-black;
+.buttonLightAnchor {
+    @apply w-full h-12 flex justify-center items-center relative z-10 hover:text-white text-center;
 }

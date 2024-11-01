@@ -5,6 +5,7 @@ import classnames from "classnames";
 import WishlistIcon from "./../../icons/wishlist.svg";
 import CompareIcon from "./../../icons/compare.svg";
 import QuickviewIcon from "./../../icons/quickview.svg";
+import ButtonLight from "../Buttons/ButtonLight";
 
 interface CardProps {
   title: string;
@@ -13,7 +14,7 @@ interface CardProps {
 
 function Card({ title, imageUrl }: CardProps) {
   return (
-    <div  className={classnames(styles.card, 'col-span-3 group')}>
+    <div  className={classnames(styles.card, 'col-span-12 sm:col-span-6 lg:col-span-3 group')}>
       <Image
         className="relative z-[1]"
         src={imageUrl}
@@ -43,9 +44,9 @@ function Card({ title, imageUrl }: CardProps) {
         </a>
       </div>
 
-      <button className="absolute z-[2] bottom-4 left-1/2 transform -translate-x-1/2 translate-y-10 bg-white w-[86%] py-4 rounded-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out">
-        {title}
-      </button>
+      <div className={classnames(styles.cardButton, 'group-hover:opacity-100 group-hover:-translate-y-2')}>
+        <ButtonLight title={'Add to Cart'}/>
+      </div>
     </div>
   );
 }

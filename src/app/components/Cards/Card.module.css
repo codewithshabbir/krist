@@ -9,3 +9,6 @@
 .iconAnchor {
     @apply bg-white hover:bg-black hover:text-white p-2 rounded-full shadow-lg transition-all duration-300 ease-out;
 }
+.cardButton {
+    @apply absolute z-[2] w-[86%] left-1/2 transform -translate-x-1/2 opacity-0 bottom-0 transition-all duration-300 ease-out;
+}
