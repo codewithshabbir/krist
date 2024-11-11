@@ -11,10 +11,10 @@ export default function Home() {
       <section className="banner bg-gray-100 px-20">
         <div className="grid grid-cols-12">
           <div className="col-span-6 flex flex-col justify-center">
-            <p className="text-xl">Classic Exclusive</p>
-            <h2 className="text-4xl font-bold py-1">Women&apos;s Collection</h2>
-            <p className="uppercase text-xl mb-4">Upto 40% off</p>
-            <div className="w-1/4">
+            <p className="text-md md:text-xl">Classic Exclusive</p>
+            <h2 className="text-xl md:text-4xl font-bold py-1">Women&apos;s Collection</h2>
+            <p className="uppercase text-lg md:text-xl mb-4">Upto 40% off</p>
+            <div className="w-full md:w-2/4">
                 <ButtonDark title="Shop Now" link="#"/>
             </div>
           </div>
@@ -77,8 +77,8 @@ export default function Home() {
         <TopRated></TopRated>
       </section>
       <section className="p-20">
-        <div className="grid grid-cols-12">
-          <div className="col-span-6 flex flex-col justify-center">
+        <div className="grid grid-cols-12 gap-y-10">
+          <div className="col-span-12 md:col-span-6 flex flex-col justify-center">
             <h2 className="text-3xl">Deals of the Month</h2>
             <p className="pt-4 pb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque veritatis, animi magni nulla labore voluptatem architecto nisi tenetur. Dolores hic rerum explicabo architecto quis voluptatem perspiciatis, necessitatibus quam tempora error.</p>
             <ul className="flex gap-4">
@@ -99,11 +99,11 @@ export default function Home() {
                 Days
               </li>
             </ul>
-            <div className="pt-10">
+            <div className="pt-10 w-full md:w-3/5 lg:md:w-2/5">
               <ButtonDark title="View All Products" link="#"></ButtonDark>
             </div>
           </div>
-          <div className="col-span-6">
+          <div className="col-span-12 md:col-span-6">
             <Image src={'/images/deals-of-the-month.jpg'} alt="Deal of the month" width={500} height={500}/>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function Home() {
           </div>
         </div>
         <div className="grid grid-cols-12 mt-10 gap-5">
-          <div className="col-span-4 bg-white gap-y-4 p-6 rounded-lg">
+          <div className="col-span-12 md:col-span-4 bg-white gap-y-4 p-6 rounded-lg">
             <div className="flex">
               <ReviewIcon width={20} height={20} className="text-yellow-500 fill-yellow-500"></ReviewIcon>
               <ReviewIcon width={20} height={20} className="text-yellow-500 fill-yellow-500"></ReviewIcon>
@@ -141,7 +141,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="col-span-4 bg-white gap-y-4 p-6 rounded-lg">
+          <div className="col-span-12 md:col-span-4 bg-white gap-y-4 p-6 rounded-lg">
             <div className="flex">
               <ReviewIcon width={20} height={20} className="text-yellow-500 fill-yellow-500"></ReviewIcon>
               <ReviewIcon width={20} height={20} className="text-yellow-500 fill-yellow-500"></ReviewIcon>
@@ -157,7 +157,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="col-span-4 bg-white gap-y-4 p-6 rounded-lg">
+          <div className="col-span-12 md:col-span-4 bg-white gap-y-4 p-6 rounded-lg">
             <div className="flex">
               <ReviewIcon width={20} height={20} className="text-yellow-500 fill-yellow-500"></ReviewIcon>
               <ReviewIcon width={20} height={20} className="text-yellow-500 fill-yellow-500"></ReviewIcon>
@@ -177,22 +177,22 @@ export default function Home() {
       </section>
       <section className="p-20">
         <div className="grid grid-cols-12">
-          <div className="col-span-3">
+          <div className="col-span-12 md:col-span-6 lg:col-span-3 mb-6 md:mb-10 lg:mb-0">
             <ShippingIcon width={25} height={25}/>
             <h2 className="font-bold pt-2">Free Shipping</h2>
             <p>Free shipping for order above $150</p>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-12 md:col-span-6 lg:col-span-3 mb-6 md:mb-10 lg:mb-0">
             <ShippingIcon width={25} height={25}/>
             <h2 className="font-bold pt-2">Money Guarantee</h2>
             <p>Within 30 days for an exchange</p>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-12 md:col-span-6 lg:col-span-3 mb-6 md:mb-10 lg:mb-0">
             <ShippingIcon width={25} height={25}/>
             <h2 className="font-bold pt-2">Online Support</h2>
             <p>24 hours a day, 7 days a week</p>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-12 md:col-span-6 lg:col-span-3 mb-6 md:mb-10 lg:mb-0">
             <ShippingIcon width={25} height={25}/>
             <h2 className="font-bold pt-2">Flexible Payment</h2>
             <p>Pay with multiple credit cards</p>
