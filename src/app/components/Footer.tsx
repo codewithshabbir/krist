@@ -4,6 +4,7 @@ import PhoneIcon from './../icons/phone.svg';
 import EmailIcon from './../icons/email.svg';
 import LocationIcon from './../icons/location.svg';
 import ArrowRightIcon from './../icons/arrow-right.svg';
+import Link from 'next/link';
 
 
 function Footer() {
@@ -30,21 +31,21 @@ function Footer() {
                 <div className='col-span-12 mb-10 lg:mb-0 md:md:col-span-6 lg:col-span-2'>
                     <h2 className='mb-6 font-bold'>Information</h2>
                     <ul>
-                        <li className='my-3'><a href="#">My Account</a></li>
-                        <li className='my-3'><a href="#">Login</a></li>
-                        <li className='my-3'><a href="#">My Cart</a></li>
-                        <li className='my-3'><a href="#">My Wishlist</a></li>
-                        <li className='my-3'><a href="#">Checkout</a></li>
+                        <li className='my-3'><Link href="#">My Account</Link></li>
+                        <li className='my-3'><Link href="#">Login</Link></li>
+                        <li className='my-3'><Link href="#">My Cart</Link></li>
+                        <li className='my-3'><Link href="#">My Wishlist</Link></li>
+                        <li className='my-3'><Link href="#">Checkout</Link></li>
                     </ul>
                 </div>
                 <div className='col-span-12 mb-10 lg:mb-0 md:md:col-span-6 lg:col-span-3'>
                 <h2 className='mb-6 font-bold'>Service</h2>
                     <ul>
-                        <li className='my-3'><a href="#">About Us</a></li>
-                        <li className='my-3'><a href="#">Careers</a></li>
-                        <li className='my-3'><a href="#">Delivery Information</a></li>
-                        <li className='my-3'><a href="#">Privacy Policy</a></li>
-                        <li className='my-3'><a href="#">Terms & Conditions</a></li>
+                        <li className='my-3'><Link href="#">About Us</Link></li>
+                        <li className='my-3'><Link href="#">Careers</Link></li>
+                        <li className='my-3'><Link href="#">Delivery Information</Link></li>
+                        <li className='my-3'><Link href="#">Privacy Policy</Link></li>
+                        <li className='my-3'><Link href="#">Terms & Conditions</Link></li>
                     </ul>
                 </div>
                 <div className='col-span-12 mb-10 lg:mb-0 md:md:col-span-6 lg:col-span-3'>
@@ -59,7 +60,7 @@ function Footer() {
                 </div>
             </div>
             <div className='text-center py-6'>
-                Design and Developed by <a className='font-bold' href="#">Muhammad Shabbir.</a>
+                Design and Developed by <Link className='font-bold' href="#">Muhammad Shabbir.</Link>
             </div>
         </footer>
     </>
