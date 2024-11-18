@@ -1,5 +1,5 @@
 .card {
-    @apply bg-gray-50 hover:bg-gray-100 w-full rounded-lg relative overflow-hidden transition-all duration-300 ease-out;
+    @apply bg-gray-50 hover:bg-gray-100 w-full h-[280px] flex items-center rounded-lg relative overflow-hidden transition-all duration-300 ease-out;
 }
 
 .iconContainer {
@@ -7,7 +7,7 @@
 }
 
 .iconAnchor {
-    @apply bg-white hover:bg-black hover:text-white p-2 rounded-full shadow-lg transition-all duration-300 ease-out;
+    @apply bg-white hover:bg-black hover:text-white p-2 text-xl rounded-full shadow-lg transition-all duration-300 ease-out;
 }
 .cardButton {
     @apply absolute z-[2] w-[86%] left-1/2 transform -translate-x-1/2 opacity-0 bottom-0 transition-all duration-300 ease-out;

@@ -22,9 +22,9 @@ function BestSeller() {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-12 pt-10 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
         {best_seller.map((item) => (
-          <Card key={item.id} title={item.title} imageUrl={item.imageUrl} />
+          <Card key={item.id} title={item.title} imageUrl={item.imageUrl} price={'34'} />
         ))}
       </div>
     </>

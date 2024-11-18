@@ -17,7 +17,7 @@ function Header() {
         <nav className="col-span-6 items-center justify-center hidden md:hidden lg:flex">
           <ul className='flex gap-6'>
               <li><Link href="/">Home</Link></li>
-              <li><Link href="">Shop</Link></li>
+              <li><Link href="/shop">Shop</Link></li>
               <li><Link href="">Our Story</Link></li>
               <li><Link href="">Blog</Link></li>
               <li><Link href="">Contact Us</Link></li>
