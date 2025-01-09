@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { fetchCategory, fetchCategoryList, fetchProductByCategoryList, fetchProductsByCategory } from "@/lib/api/productApi";
+import { fetchProductByCategoryList } from "@/lib/api/productApi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
