@@ -1,33 +1,33 @@
 .buttonLight {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: white;
-    color: black;
-    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
 }
 
 .animLayer {
-    position: absolute;
-    background-color: black;
-    transition: width 0.3s ease;
-    height: 100%;
-    top: 0;
-    right: 0;
-    width: 0;
+  position: absolute;
+  background-color: black;
+  transition: width 0.3s ease;
+  height: 100%;
+  top: 0;
+  right: 0;
+  width: 0;
 }
 
 .buttonLight:hover .animLayer {
-    width: 100%;
-    left: 0;
-    right: auto;
+  width: 100%;
+  left: 0;
+  right: auto;
 }
 .buttonLight:hover {
-    color: white;
+  color: white;
 }
 
 .buttonLightAnchor {
-    @apply w-full h-12 flex justify-center items-center relative z-10 hover:text-white text-center;
+  @apply w-full h-12 flex justify-center items-center relative z-10 hover:text-white text-center;
 }

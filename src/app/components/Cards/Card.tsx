@@ -8,13 +8,8 @@ import { FaStarHalfStroke } from "react-icons/fa6";
 import { LuArrowLeftRight } from "react-icons/lu";
 import { IoEyeOutline } from "react-icons/io5";
 import ButtonLight from "../Buttons/ButtonLight";
+import { CardProps } from "@/@types/types";
 
-interface CardProps {
-  title: string;
-  imageUrl: string;
-  price: number;
-  rating: number;
-}
 
 function Card({ title, imageUrl, price, rating }: CardProps) {
   const renderStars = (rating: number) => {
@@ -70,7 +65,7 @@ function Card({ title, imageUrl, price, rating }: CardProps) {
       </div>
 
       <div className={classnames(styles.cardButton, 'group-hover:opacity-100 group-hover:-translate-y-2')}>
-        <ButtonLight title={'Add to Cart'}/>
+        <ButtonLight link="#" title={'Add to Cart'}/>
       </div>
     </div>
     <div className="pt-2">

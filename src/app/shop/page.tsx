@@ -10,19 +10,7 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import ProductList from "../components/ProductsList/ProductList";
 import { fetchCategory, fetchProductsByCategory } from "@/lib/api/productApi";
-
-interface Categories {
-  name: string;
-  slug: string;
-}
-
-interface Product {
-  id: number;
-  title: string;
-  images: string[];
-  price: number;
-  rating: number;
-}
+import { Categories, Product } from "@/@types/types";
 
 const Page = () => {
   const [openItems, setOpenItems] = useState<string[]>(["item-1", "item-2", "item-3", "item-4"]);
@@ -79,7 +67,6 @@ const Page = () => {
         console.error("Error fetching products by categories:", error);
       }
     };
-
     fetchData();
   }, [selectedCategories]);
 

@@ -3,18 +3,7 @@ import React, { useEffect, useState } from "react";
 import Card from "../Cards/Card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { fetchProductList } from "@/lib/api/productApi";
-
-interface ProductListProps {
-  filterProducts: Product[];
-}
-
-interface Product {
-  id: number;
-  title: string;
-  images: string[];
-  price: number;
-  rating: number;
-}
+import { Product, ProductListProps } from "@/@types/types";
 
 const ProductList: React.FC<ProductListProps> = ({ filterProducts }) => {
   const [showAllProducts, setShowAllProducts] = useState<Product[]>([]);

@@ -1,13 +1,9 @@
 import React from 'react';
 import classnames from "classnames";
 import styles from './ButtonDark.module.css';
+import { Buttons } from '@/@types/types';
 
-interface ButtonLightProps {
-  title: string;
-  link: string;
-}
-
-function ButtonDark({title, link}:ButtonLightProps) {
+function ButtonDark({title, link}:Buttons) {
   return (
     <>
       <div className={classnames(styles.buttonDark)}>

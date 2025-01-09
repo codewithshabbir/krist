@@ -1,10 +1,9 @@
 import React from 'react';
-import Card from "../../Cards/Card"; // Import the renamed Card component
+import Card from "../../Cards/Card";
 import { best_seller } from "../../Cards/data";
 
 function TopRated() {
-  console.log(best_seller); // Use this for debugging if needed, remove in production
-
+  console.log(best_seller); 
   return (
     <>
       <div className="flex justify-between">

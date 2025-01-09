@@ -4,6 +4,7 @@ import TopRated from "./components/Sections/BestSeller/TopRated";
 import ButtonDark from "./components/Buttons/ButtonDark";
 import ReviewIcon from './icons/review.svg'
 import ShippingIcon from './icons/shipping.svg'
+import Categories from "./components/Sections/Categories/Categories";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
             <h2 className="text-xl md:text-4xl font-bold py-1">Women&apos;s Collection</h2>
             <p className="uppercase text-lg md:text-xl mb-4">Upto 40% off</p>
             <div className="w-full md:w-2/4">
-                <ButtonDark title="Shop Now" link="#"/>
+                <ButtonDark title="Shop Now" link="/shop"/>
             </div>
           </div>
           <div className="col-span-6 flex justify-center">
@@ -24,51 +25,7 @@ export default function Home() {
         </div>
       </section>
       <section className="category p-20">
-        <div className="flex justify-between">
-          <h2 className="text-3xl font-semibold">Shop by Categories</h2>
-          <div>
-            <button>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
-              </svg>
-            </button>
-            <button>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div className="grid grid-cols-12 pt-10 gap-5">
-          <div className="col-span-3 bg-gray-100 w-full rounded-lg relative overflow-hidden">
-            <h3 className="absolute left-6 top-1 text-gray-200 text-6xl font-bold whitespace-nowrap">Casual Wear</h3>
-            <Image className=" relative z-[1]" src="/images/home-banner.png" alt="home banner" width={500} height={400} layout="responsive"/>
-            <button className="absolute z-[2] bottom-4 left-1/2 transform -translate-x-1/2 bg-white w-4/5 py-4 rounded-lg">
-              Casual Wear
-            </button>
-          </div>
-          <div className="col-span-3 bg-gray-100 w-full rounded-lg relative overflow-hidden">
-            <h3 className="absolute left-6 top-1 text-gray-200 text-6xl font-bold whitespace-nowrap">Casual Wear</h3>
-            <Image className=" relative z-[1]" src="/images/home-banner.png" alt="home banner" width={500} height={400} layout="responsive"/>
-            <button className="absolute z-[2] bottom-4 left-1/2 transform -translate-x-1/2 bg-white w-4/5 py-4 rounded-lg">
-              Casual Wear
-            </button>
-          </div>
-          <div className="col-span-3 bg-gray-100 w-full rounded-lg relative overflow-hidden">
-            <h3 className="absolute left-6 top-1 text-gray-200 text-6xl font-bold whitespace-nowrap">Casual Wear</h3>
-            <Image className=" relative z-[1]" src="/images/home-banner.png" alt="home banner" width={500} height={400} layout="responsive"/>
-            <button className="absolute z-[2] bottom-4 left-1/2 transform -translate-x-1/2 bg-white w-4/5 py-4 rounded-lg">
-              Casual Wear
-            </button>
-          </div>
-          <div className="col-span-3 bg-gray-100 w-full rounded-lg relative overflow-hidden">
-            <h3 className="absolute left-6 top-1 text-gray-200 text-6xl font-bold whitespace-nowrap">Casual Wear</h3>
-            <Image className=" relative z-[1]" src="/images/home-banner.png" alt="home banner" width={500} height={400} layout="responsive"/>
-            <button className="absolute z-[2] bottom-4 left-1/2 transform -translate-x-1/2 bg-white w-4/5 py-4 rounded-lg">
-              Casual Wear
-            </button>
-          </div>
-        </div>
+        <Categories/>
       </section>
       <section className="best-seller p-20">
         <BestSeller></BestSeller>
