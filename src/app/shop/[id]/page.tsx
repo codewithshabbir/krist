@@ -7,11 +7,12 @@ import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import { ProductData } from "@/@types/types";
 
 const ProductPage = ({ params }: { params: Promise<{ id: number }> }) => {
   const { id } = React.use(params);
 
-  const [productData, setProductData] = useState<any>(null);
+  const [productData, setProductData] = useState<ProductData | null>(null);
   const [count, setCount] = useState(0);
 
   useEffect(() => {
