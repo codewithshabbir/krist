@@ -43,7 +43,8 @@ const ProductList: React.FC<ProductListProps> = ({ filterProducts }) => {
           // If filterProducts is empty, show all products
           showAllProducts.map((item) => (
             <Card
-              key={item.id}
+              key={item.id}  
+              id={item.id}
               title={item.title}
               imageUrl={item.images[0]}
               price={item.price}
@@ -55,6 +56,7 @@ const ProductList: React.FC<ProductListProps> = ({ filterProducts }) => {
           filterProducts.map((item) => (
             <Card
               key={item.id}
+              id={item.id}
               title={item.title}
               imageUrl={item.images[0]}
               price={item.price}

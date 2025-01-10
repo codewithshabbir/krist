@@ -24,6 +24,7 @@ export interface Buttons {
 }
 
 export interface CardProps {
+  id: number,
   title: string;
   imageUrl: string;
   price: number;

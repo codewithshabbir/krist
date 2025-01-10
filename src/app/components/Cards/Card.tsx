@@ -3,45 +3,30 @@ import Image from "next/image";
 import styles from "./Card.module.css";
 import classnames from "classnames";
 import { CiStar } from "react-icons/ci";
-import { FaStar } from "react-icons/fa";
-import { FaStarHalfStroke } from "react-icons/fa6";
 import { LuArrowLeftRight } from "react-icons/lu";
 import { IoEyeOutline } from "react-icons/io5";
 import ButtonLight from "../Buttons/ButtonLight";
 import { CardProps } from "@/@types/types";
+import Link from "next/link";
+import StarRating from "../StarRating/StarRating";
 
 
-function Card({ title, imageUrl, price, rating }: CardProps) {
-  const renderStars = (rating: number) => {
-    const totalStar = 5;
-    const star = [];
-
-    for (let i = 0; i < totalStar; i++) {
-      if (rating >= i+1) {
-        star.push(<FaStar key={i} className="fill-yellow-500"/>);
-      }
-      else if (rating > i && rating < i+1) {
-        star.push(<FaStarHalfStroke key={i} className="fill-yellow-500"/>);
-      }
-      else{
-        star.push(<CiStar key={i} className="fill-yellow-500"/>);
-      }
-    }
-
-    return star;
-  }
+function Card({ id, title, imageUrl, price, rating }: CardProps) {
 
   return (
     <div>
     <div className={classnames(styles.card, 'group')}>
-      <Image
-        className="relative z-[1]"
-        src={imageUrl}
-        alt={title}
-        width={500}
-        height={400}
-        unoptimized
-      />
+      <Link href={`shop/${id}`}>
+        <Image
+          className="relative z-[1]"
+          src={imageUrl}
+          alt={title}
+          width={500}
+          height={400}
+          unoptimized
+        />
+      </Link>
+      
 
       <div className={classnames( styles.iconContainer, 'group-hover:opacity-100 group-hover:-translate-x-4')}>
         <a
@@ -68,13 +53,13 @@ function Card({ title, imageUrl, price, rating }: CardProps) {
         <ButtonLight link="#" title={'Add to Cart'}/>
       </div>
     </div>
-    <div className="pt-2">
+    <Link href={`shop/${id}`} className="pt-2">
       <h2>{title}</h2>
       <div className="flex pt-1 pb-2">
-        {renderStars(rating)}
+        <StarRating  rating={rating}/>
       </div>
       <span className="font-bold">{"$" + price}</span>
-    </div>
+    </Link>
     </div>
   );
 }

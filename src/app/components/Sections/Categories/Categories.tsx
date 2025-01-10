@@ -10,6 +10,7 @@ import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 import styles from "@/app/components/Buttons/ButtonLight.module.css";
 import { CategoryItem } from "@/@types/types";
 import { Skeleton } from "@/components/ui/skeleton";
+import Link from "next/link";
 
 const Categories = () => {
   const sliderRef = useRef<Slider | null>(null);
@@ -94,12 +95,12 @@ const Categories = () => {
                     <div className="absolute bottom-3 z-10 w-4/5 left-[1.7rem]">
                       <div className={classnames(styles.buttonLight)}>
                         <div className={classnames(styles.animLayer)}></div>
-                        <a
+                        <Link
                           href="/shop"
                           className={classnames(styles.buttonLightAnchor)}
                         >
                           Show All
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
