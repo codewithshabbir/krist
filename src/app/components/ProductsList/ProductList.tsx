@@ -49,6 +49,7 @@ const ProductList: React.FC<ProductListProps> = ({ filterProducts }) => {
               imageUrl={item.images[0]}
               price={item.price}
               rating={item.rating}
+              brand={item.brand}
             />
           ))
         ) : (
@@ -61,6 +62,7 @@ const ProductList: React.FC<ProductListProps> = ({ filterProducts }) => {
               imageUrl={item.images[0]}
               price={item.price}
               rating={item.rating}
+              brand={item.brand}
             />
           ))
         )}

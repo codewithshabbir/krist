@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Image from "next/image";
 import styles from "./Card.module.css";
@@ -9,9 +10,24 @@ import ButtonLight from "../Buttons/ButtonLight";
 import { CardProps } from "@/@types/types";
 import Link from "next/link";
 import StarRating from "../StarRating/StarRating";
+import { useCart } from "@/app/context/CartContext";
 
 
-function Card({ id, title, imageUrl, price, rating }: CardProps) {
+function Card({ id, title, imageUrl, price, rating, brand }: CardProps) {
+
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    const item:CardProps = {
+      id,
+      title,
+      imageUrl,
+      price,
+      brand,
+      rating
+    }
+    addToCart(item)
+  }
 
   return (
     <div>
@@ -26,7 +42,6 @@ function Card({ id, title, imageUrl, price, rating }: CardProps) {
           unoptimized
         />
       </Link>
-      
 
       <div className={classnames( styles.iconContainer, 'group-hover:opacity-100 group-hover:-translate-x-4')}>
         <a
@@ -50,7 +65,7 @@ function Card({ id, title, imageUrl, price, rating }: CardProps) {
       </div>
 
       <div className={classnames(styles.cardButton, 'group-hover:opacity-100 group-hover:-translate-y-2')}>
-        <ButtonLight link="#" title={'Add to Cart'}/>
+        <ButtonLight clickFun={handleAddToCart} title={'Add to Cart'}/>
       </div>
     </div>
     <Link href={`shop/${id}`} className="pt-2">

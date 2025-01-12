@@ -16,11 +16,14 @@ export interface Product {
   images: string[];
   price: number;
   rating: number;
+  brand?: string;
 }
 
 export interface Buttons {
   title: string;
-  link: string;
+  link?: string;
+  clickFun?: () => void;
+
 }
 
 export interface CardProps {
@@ -29,6 +32,7 @@ export interface CardProps {
   imageUrl: string;
   price: number;
   rating: number;
+  brand?: string;
 }
 
 export interface ProductListProps {
@@ -82,4 +86,11 @@ export interface SelectedProduct {
   name: string;
   imageUrl: string;
   slug: string;
+}
+
+export type CartContextType = {
+  cart: CardProps[],
+  addToCart: (item: CardProps) => void,
+  removeFromCart?: (item: CardProps) => void,
+  cartCount: number
 }
