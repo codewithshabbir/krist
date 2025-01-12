@@ -24,16 +24,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="category p-20">
+      <section className="category p-10 lg:p-20">
         <Categories/>
       </section>
-      <section className="best-seller p-20">
+      <section className="best-seller p-10 lg:p-20">
         <BestSeller></BestSeller>
       </section>
-      <section className="p-20">
+      <section className="p-10 lg:p-20">
         <TopRated></TopRated>
       </section>
-      <section className="p-20">
+      <section className="p-10 lg:p-20">
         <div className="grid grid-cols-12 gap-y-10">
           <div className="col-span-12 md:col-span-6 flex flex-col justify-center">
             <h2 className="text-3xl">Deals of the Month</h2>
@@ -65,7 +65,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="p-20 bg-gray-100">
+      <section className="p-10 lg:p-20 bg-gray-100">
         <div className="flex justify-between">
           <h2 className="text-3xl font-semibold">What our Customers say&apos;s</h2>
           <div>
@@ -132,7 +132,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="p-20">
+      <section className="p-10 lg:p-20">
         <div className="grid grid-cols-12">
           <div className="col-span-12 md:col-span-6 lg:col-span-3 mb-6 md:mb-10 lg:mb-0">
             <ShippingIcon width={25} height={25}/>
