@@ -13,11 +13,18 @@ import CartSidebar from "./CartSidebar/CartSidebar";
 
 function Header() {
   const [menuOpen, setmenuOpen] = useState(false);
+  const [sidebarOpen, setsidebarOpen] = useState(false);
 
-  const {cartCount} = useCart();
-  
+  const { cartCount } = useCart();
+
   const toggleMobileMenu = (isOpen: boolean) => {
     setmenuOpen(isOpen);
+  };
+
+  const toggleAddToCartSidebar = (isOpen: boolean) => {
+    console.log("hi");
+
+    setsidebarOpen(isOpen);
   };
 
   return (
@@ -62,18 +69,25 @@ function Header() {
               <IoMdHeartEmpty className="text-2xl" />
             </Link>
 
-            <Link href="" className="relative">
+            <div
+              onClick={() => toggleAddToCartSidebar(true)}
+              className="relative cursor-pointer"
+            >
               <BsHandbag className="text-2xl" />
               <span className="absolute top-0 -right-1 bg-black text-white text-[10px] rounded-lg w-4 h-4 flex justify-center items-center">
                 {cartCount}
               </span>
-            </Link>
+            </div>
             <div>
               <ButtonDark title="Login" link="/login" />
             </div>
-          </div>    
-          <div className="absolute w-80 hidden h-screen bg-white right-0 top-0 z-10">
-            <CartSidebar/>
+          </div>
+          <div
+            className={`absolute top-0 right-0 w-80 h-full bg-white z-10 
+              transition-transform duration-300 transform 
+              ${sidebarOpen ? "translate-x-0" : "translate-x-full"}`}
+          >
+            <CartSidebar onClickFun={toggleAddToCartSidebar} value={false} />
           </div>
         </div>
         <div className="flex lg:hidden justify-between items-center">
@@ -87,10 +101,21 @@ function Header() {
               />
             </Link>
           </div>
-          <FaBarsStaggered
-            onClick={() => toggleMobileMenu(true)}
-            className="text-2xl cursor-pointer"
-          />
+          <div className="flex gap-4">
+            <div
+              onClick={() => toggleAddToCartSidebar(true)}
+              className="relative cursor-pointer"
+            >
+              <BsHandbag className="text-2xl" />
+              <span className="absolute top-0 -right-1 bg-black text-white text-[10px] rounded-lg w-4 h-4 flex justify-center items-center">
+                {cartCount}
+              </span>
+            </div>
+            <FaBarsStaggered
+              onClick={() => toggleMobileMenu(true)}
+              className="text-2xl cursor-pointer"
+            />
+          </div>
           <div
             className={`absolute ${
               menuOpen ? "translate-x-0" : "-translate-x-full"

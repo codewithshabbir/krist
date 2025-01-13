@@ -94,3 +94,8 @@ export type CartContextType = {
   removeFromCart?: (item: CardProps) => void,
   cartCount: number
 }
+
+export interface cartSidebarProps {
+  onClickFun: (value: boolean) => void;
+  value:boolean
+}

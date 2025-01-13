@@ -1,16 +1,26 @@
+import { cartSidebarProps } from "@/@types/types";
 import { useCart } from "@/app/context/CartContext";
 import React from "react";
 import { IoTrashOutline } from "react-icons/io5";
+import { RxCross1 } from "react-icons/rx";
+import ButtonDark from "../Buttons/ButtonDark";
 
-const CartSidebar = () => {
+const CartSidebar: React.FC<cartSidebarProps> = ({ onClickFun, value }) => {
   const { cart } = useCart();
 
   return (
-    <div className="w-full max-w-md h-screen bg-white shadow-lg rounded-lg">
-      <div className="bg-black py-4 px-6 text-white rounded-t-lg">
-        <h2 className="text-xl font-semibold">Cart Items</h2>
+    <div className="w-full max-w-md h-screen bg-white shadow-lg rounded-lg flex flex-col">
+      <div className="flex-shrink-0 bg-black py-4 px-6 text-white rounded-t-lg">
+        <div className="flex justify-between items-center">
+          <h2 className="text-xl font-semibold">Cart Items</h2>
+          <RxCross1
+            onClick={() => onClickFun(value)}
+            className="text-2xl cursor-pointer"
+          />
+        </div>
       </div>
-      <div className="py-4 px-6 space-y-4 overflow-y-auto h-[410px]">
+
+      <div className={`flex-grow overflow-y-auto py-4 px-6 ${cart.length === 0 ? 'flex justify-center items-center' : ''}`}>
         {cart.length === 0 ? (
           <p className="text-center text-gray-500">Your Cart is Empty.</p>
         ) : (
@@ -40,10 +50,9 @@ const CartSidebar = () => {
           ))
         )}
       </div>
-      <div className="bg-gray-100 py-4 px-6 flex justify-between items-center rounded-b-lg">
-        <button className="bg-yellow-500 hover:bg-yellow-400 text-white py-2 px-4 rounded-md w-full">
-          Proceed to Checkout
-        </button>
+
+      <div className="flex-shrink-0 bg-gray-100 py-4 px-6 flex justify-between items-center rounded-b-lg">
+        <ButtonDark title="Proceed to Checkout" link="#" />
       </div>
     </div>
   );
