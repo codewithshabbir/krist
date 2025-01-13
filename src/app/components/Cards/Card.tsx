@@ -12,69 +12,74 @@ import Link from "next/link";
 import StarRating from "../StarRating/StarRating";
 import { useCart } from "@/app/context/CartContext";
 
-
 function Card({ id, title, imageUrl, price, rating, brand }: CardProps) {
-
   const { addToCart } = useCart();
 
+  // Handles adding the current product to the cart
   const handleAddToCart = () => {
-    const item:CardProps = {
+    const item: CardProps = {
       id,
       title,
       imageUrl,
       price,
       brand,
-      rating
-    }
-    addToCart(item)
-  }
+      rating,
+    };
+    addToCart(item);
+  };
 
   return (
     <div>
-    <div className={classnames(styles.card, 'group')}>
-      <Link href={`shop/${id}`}>
-        <Image
-          className="relative z-[1]"
-          src={imageUrl}
-          alt={title}
-          width={500}
-          height={400}
-          unoptimized
-        />
+      <div className={classnames(styles.card, "group")}>
+        {/* Product image with link to product details */}
+        <Link href={`shop/${id}`}>
+          <Image
+            className="relative z-[1]"
+            src={imageUrl}
+            alt={title}
+            width={500}
+            height={400}
+            unoptimized
+          />
+        </Link>
+
+        {/* Icon container visible on hover */}
+        <div
+          className={classnames(
+            styles.iconContainer,
+            "group-hover:opacity-100 group-hover:-translate-x-4"
+          )}
+        >
+          <a className={classnames(styles.iconAnchor)} href="#">
+            <CiStar width={24} height={24} />
+          </a>
+          <a className={classnames(styles.iconAnchor)} href="#">
+            <LuArrowLeftRight width={24} height={24} />
+          </a>
+          <a className={classnames(styles.iconAnchor)} href="#">
+            <IoEyeOutline width={24} height={24} />
+          </a>
+        </div>
+
+        {/* Add to Cart button visible on hover */}
+        <div
+          className={classnames(
+            styles.cardButton,
+            "group-hover:opacity-100 group-hover:-translate-y-2"
+          )}
+        >
+          <ButtonLight clickFun={handleAddToCart} title={"Add to Cart"} />
+        </div>
+      </div>
+
+      {/* Product details */}
+      <Link href={`shop/${id}`} className="pt-2">
+        <h2>{title}</h2>
+        <div className="flex pt-1 pb-2">
+          <StarRating rating={rating} />
+        </div>
+        <span className="font-bold">{"$" + price}</span>
       </Link>
-
-      <div className={classnames( styles.iconContainer, 'group-hover:opacity-100 group-hover:-translate-x-4')}>
-        <a
-          className={classnames(styles.iconAnchor)}
-          href="#"
-        >
-          <CiStar width={24} height={24} />
-        </a>
-        <a
-          className={classnames(styles.iconAnchor)}
-          href="#"
-        >
-          <LuArrowLeftRight width={24} height={24} />
-        </a>
-        <a
-          className={classnames(styles.iconAnchor)}
-          href="#"
-        >
-          <IoEyeOutline width={24} height={24} />
-        </a>
-      </div>
-
-      <div className={classnames(styles.cardButton, 'group-hover:opacity-100 group-hover:-translate-y-2')}>
-        <ButtonLight clickFun={handleAddToCart} title={'Add to Cart'}/>
-      </div>
-    </div>
-    <Link href={`shop/${id}`} className="pt-2">
-      <h2>{title}</h2>
-      <div className="flex pt-1 pb-2">
-        <StarRating  rating={rating}/>
-      </div>
-      <span className="font-bold">{"$" + price}</span>
-    </Link>
     </div>
   );
 }

@@ -25,10 +25,10 @@ const ProductList: React.FC<ProductListProps> = ({ filterProducts }) => {
 
   return (
     <div>
-      {/* Product List */}
+      {/* Product grid layout */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         {loading ? (
-          // Skeleton loaders when loading is true
+          // Show skeleton loaders while data is being fetched
           [...Array(9)].map((_, index) => (
             <div key={index} className="flex flex-col space-y-3">
               <Skeleton className="h-[280px] w-full rounded-xl" />
@@ -40,10 +40,10 @@ const ProductList: React.FC<ProductListProps> = ({ filterProducts }) => {
             </div>
           ))
         ) : filterProducts.length === 0 ? (
-          // If filterProducts is empty, show all products
+          // Display all products when no filters are applied
           showAllProducts.map((item) => (
             <Card
-              key={item.id}  
+              key={item.id}
               id={item.id}
               title={item.title}
               imageUrl={item.images[0]}
@@ -53,7 +53,7 @@ const ProductList: React.FC<ProductListProps> = ({ filterProducts }) => {
             />
           ))
         ) : (
-          // Show filtered products
+          // Display filtered products when a filter is applied
           filterProducts.map((item) => (
             <Card
               key={item.id}

@@ -17,11 +17,11 @@ const Categories = () => {
   const [categoryList, setCategoryList] = useState<CategoryItem[]>([]);
 
   useEffect(() => {
+    // Fetch category data on component mount
     const fetchData = async () => {
       try {
         const categories = await fetchProductByCategoryList();
         setCategoryList(categories);
-        console.log(categories);
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
@@ -29,7 +29,7 @@ const Categories = () => {
     fetchData();
   }, []);
 
-  // Slider settings
+  // Slick slider settings
   const settings = {
     dots: false,
     infinite: true,
@@ -37,6 +37,7 @@ const Categories = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
+      // Responsive settings for different screen sizes
       {
         breakpoint: 1024, // Medium screens
         settings: {
@@ -60,25 +61,28 @@ const Categories = () => {
 
   return (
     <div className="categories-section">
+      {/* Section Header */}
       <div className="flex justify-between items-center mb-5">
         <h2 className="text-3xl font-semibold">Shop by Categories</h2>
         <div className="flex items-center">
+          {/* Previous and Next buttons for slider */}
           <FaArrowLeftLong
-            onClick={() => sliderRef.current?.slickPrev()}
+            onClick={() => sliderRef.current?.slickPrev()} // Navigate to previous slide
             className="text-xl cursor-pointer"
           />
           <FaArrowRightLong
-            onClick={() => sliderRef.current?.slickNext()}
+            onClick={() => sliderRef.current?.slickNext()} // Navigate to next slide
             className="text-xl ml-2 cursor-pointer"
           />
         </div>
       </div>
 
-      {/* Slider */}
+      {/* Slider Component */}
       <div className="pt-5">
         <Slider {...settings} ref={sliderRef}>
           {categoryList && categoryList.length > 0
-            ? categoryList.map((category) => (
+            ? // Map over category data if available
+              categoryList.map((category) => (
                 <div key={category.id} className="px-2">
                   <div className="bg-gray-100 flex items-center w-full rounded-lg relative overflow-hidden h-[300px]">
                     <h3 className="absolute left-6 top-1 text-gray-200 text-6xl font-bold whitespace-nowrap">
@@ -106,7 +110,8 @@ const Categories = () => {
                   </div>
                 </div>
               ))
-            : [...Array(4)].map((_, index) => (
+            : // Skeleton loader when data is not yet available
+              [...Array(4)].map((_, index) => (
                 <div key={index} className="px-2">
                   <Skeleton className="h-[300px] w-full rounded-lg" />
                 </div>

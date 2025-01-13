@@ -10,6 +10,7 @@ const CartSidebar: React.FC<cartSidebarProps> = ({ onClickFun, value }) => {
 
   return (
     <div className="w-full max-w-md h-screen bg-white shadow-lg rounded-lg flex flex-col">
+      {/* Header section with title and close button */}
       <div className="flex-shrink-0 bg-black py-4 px-6 text-white rounded-t-lg">
         <div className="flex justify-between items-center">
           <h2 className="text-xl font-semibold">Cart Items</h2>
@@ -20,7 +21,12 @@ const CartSidebar: React.FC<cartSidebarProps> = ({ onClickFun, value }) => {
         </div>
       </div>
 
-      <div className={`flex-grow overflow-y-auto py-4 px-6 ${cart.length === 0 ? 'flex justify-center items-center' : ''}`}>
+      {/* Cart items or empty cart message */}
+      <div
+        className={`flex-grow overflow-y-auto py-4 px-6 ${
+          cart.length === 0 ? "flex justify-center items-center" : ""
+        }`}
+      >
         {cart.length === 0 ? (
           <p className="text-center text-gray-500">Your Cart is Empty.</p>
         ) : (
@@ -51,8 +57,12 @@ const CartSidebar: React.FC<cartSidebarProps> = ({ onClickFun, value }) => {
         )}
       </div>
 
-      <div className="flex-shrink-0 bg-gray-100 py-4 px-6 flex justify-between items-center rounded-b-lg">
-        <ButtonDark title="Proceed to Checkout" link="#" />
+      {/* Footer with Checkout button */}
+      <div
+        onClick={() => onClickFun(value)}
+        className="flex-shrink-0 bg-gray-100 py-4 px-6 flex justify-between items-center rounded-b-lg"
+      >
+        <ButtonDark link="/checkout" title="Checkout" />
       </div>
     </div>
   );

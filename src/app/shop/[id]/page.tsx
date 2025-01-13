@@ -10,11 +10,11 @@ import React, { useState, useEffect } from "react";
 import { ProductData } from "@/@types/types";
 
 const ProductPage = ({ params }: { params: Promise<{ id: number }> }) => {
-  const { id } = React.use(params);
-
+  const { id } = React.use(params); // Access product ID from route params
   const [productData, setProductData] = useState<ProductData | null>(null);
   const [count, setCount] = useState(0);
 
+  // Fetch product data on component mount or when product ID changes
   useEffect(() => {
     const fetchProductData = async () => {
       const data = await singleProductData(id);
@@ -30,12 +30,14 @@ const ProductPage = ({ params }: { params: Promise<{ id: number }> }) => {
     return <div>Loading...</div>;
   }
 
+  // Calculate discounted price
   const discountAmount = productData.price * (productData.discountPercentage / 100);
   const discountedPrice = (productData.price - discountAmount).toFixed(2);
 
   return (
     <div className="px-10 md:px-20 lg:px-40 pt-14 pb-6">
       <div className="flex flex-wrap lg:flex-nowrap gap-10">
+        {/* Product image display */}
         <div>
           <Image
             width={800}
@@ -47,6 +49,7 @@ const ProductPage = ({ params }: { params: Promise<{ id: number }> }) => {
         </div>
         <div>
           <div className="flex flex-col gap-2">
+            {/* Product details */}
             <h3 className="text-2xl font-bold">{productData.brand}</h3>
             <h2 className="text-4xl font-semibold">{productData.title}</h2>
             <div className="flex items-center gap-1">
@@ -63,6 +66,7 @@ const ProductPage = ({ params }: { params: Promise<{ id: number }> }) => {
           </div>
           <p className="my-4">{productData.description}</p>
           <div className="flex flex-col gap-4">
+            {/* Quantity selection */}
             <div className="flex gap-4">
               <div className="flex items-center space-x-4 border-2 border-black rounded-lg px-4 justify-center">
                 <button
@@ -76,11 +80,12 @@ const ProductPage = ({ params }: { params: Promise<{ id: number }> }) => {
                   onClick={increment}
                   className="text-black focus:outline-none"
                 >
-                  <FaPlus/>
+                  <FaPlus />
                 </button>
               </div>
               <ButtonDark title="Add to Cart" link="#" />
             </div>
+            {/* Tags */}
             <div>
               <span className="mr-2 font-semibold">Tags:</span>
               {productData.tags.map((tag: string) => (
@@ -92,10 +97,12 @@ const ProductPage = ({ params }: { params: Promise<{ id: number }> }) => {
                 </span>
               ))}
             </div>
+            {/* SKU */}
             <div>
               <span className="font-semibold">SKU: </span>
               <span className="font-medium">{productData.sku}</span>
             </div>
+            {/* Return policy */}
             <h6 className="flex items-center gap-2 font-medium">
               <FaUndo size={20} />
               {productData.returnPolicy}

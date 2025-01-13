@@ -60,7 +60,7 @@ function Footer() {
                 </div>
             </div>
             <div className='text-center py-6'>
-                Design and Developed by <Link className='font-bold' href="#">Muhammad Shabbir.</Link>
+                Design and Developed by <Link className='font-bold' href="https://codewithshabbir.vercel.app/">Muhammad Shabbir.</Link>
             </div>
         </footer>
     </>
