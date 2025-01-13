@@ -5,7 +5,7 @@ import ButtonDark from "../components/Buttons/ButtonDark";
 import { IoTrashOutline } from "react-icons/io5";
 import { Skeleton } from "@/components/ui/skeleton";
 
-const page: React.FC = () => {
+const Page = () => {
   const { cart } = useCart();
   const [discountCode, setDiscountCode] = useState("");
   const [discount, setDiscount] = useState(0);
@@ -133,4 +133,4 @@ const page: React.FC = () => {
   );
 };
 
-export default page;
+export default Page;
